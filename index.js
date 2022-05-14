@@ -285,7 +285,7 @@ function baitap4(){
     var price =  tinhTiencap(loaiKH,soKenh);
 
     document.getElementById("ketqua").style.display = "block";
-    document.getElementById("ketqua").innerHTML = "Mã KH: "+maKH+"; Tiền thuế thu nhập cá nhân: "+new Intl.NumberFormat('en-IN').format(price)+" $ ";
+    document.getElementById("ketqua").innerHTML = "Mã KH: "+maKH+"; Tiền thuế thu nhập cá nhân: "+formatter.format(price);
 }
 function tinhTiencap(loaiKH,soKenh)
 {
@@ -306,4 +306,8 @@ function tinhTiencap(loaiKH,soKenh)
     }   
   }
 }
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
 
